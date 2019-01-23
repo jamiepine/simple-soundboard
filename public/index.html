@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SOUNDBOARD HOURS</title>
+    <meta charset="utf-8">
+    <script src="sounds.js" type="text/javascript"></script>
+    <script src="player.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div id="sounds"></div>
+      
+  
+  </body>
+  <script>
+    // for all the sounds in the sounds.js render a button on the page
+    let html = ''
+    const keys = Object.keys(sounds)
+    let element = window.document.getElementById('sounds')
+    for (let key of keys) {
+      console.log(key)
+      html = html.concat(`<button onclick="playSound('${key}'); return false;">${key}</button>`)
+    }
+    element.innerHTML = html
+
+  </script>
+  <style>
+  body {
+    background-color: #2c2c2c;
+    color: #fff;
+
+  }
+  button {
+    background: #252525;
+    border: none;
+    border-radius: 3px;
+    color: #fefefe;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 12px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  </style>
+</html>
